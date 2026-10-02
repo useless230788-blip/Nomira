@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nomira — A Studio for Names</title>
+<meta name="description" content="Design your name in 260+ typographic forms or generate 240+ curated usernames for 10 platforms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Serif+Display:ital@0;1&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Cinzel:wght@400..900&family=Cinzel+Decorative:wght@400..900&family=Marcellus&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Forum&family=Young+Serif&family=Syne:wght@400..800&family=Bebas+Neue&family=Major+Mono+Display&family=Unbounded:wght@200..900&family=Prata&family=UnifrakturMaguntia&family=MedievalSharp&family=Pirata+One&family=Almendra:ital,wght@0,400..700;1,400..700&family=Spectral:ital,wght@0,200..800;1,200..800&family=Yeseva+One&family=Abril+Fatface&family=Dancing+Script:wght@400..700&family=Sacramento&family=Great+Vibes&family=Parisienne&family=Tangerine:wght@400..700&family=Satisfy&family=Allura&family=Pinyon+Script&family=Norican&family=Petit+Formal+Script&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Libre+Caslon+Display:ital@0;1&family=Trirong:ital,wght@0,200..900;1,200..900&family=Cutive+Mono&family=Caveat:wght@400..700&family=Yellowtail&family=Pacifico&family=Lobster&family=Kaushan+Script&family=Permanent+Marker&family=Indie+Flower&family=Patrick+Hand&family=Kalam:wght@300..700&family=Homemade+Apple&family=Shadows+Into+Light&family=Press+Start+2P&family=Monoton&family=Righteous&family=Chango&family=Bowlby+One&family=Fascinate:wght@400;900&family=Rye&family=Special+Elite&family=UnifrakturCook&family=Germania+One&family=New+Rocker&family=Ewert&family=Anton&family=Oswald:wght@200..700&family=Teko:wght@300..700&family=Russo+One&family=Alfa+Slab+One&family=Passion+One:wght@400..900&family=Orbitron:wght@400..900&family=Audiowide&family=Rajdhani:wght@300..700&family=Oxanium:wght@200..800&family=Michroma&family=Share+Tech&family=Chakra+Petch:wght@300..700&family=Electrolize&family=Syncopate:wght@400..700&family=JetBrains+Mono:wght@400;700&family=Roboto+Mono:wght@400;700&family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Montserrat:wght@100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Sora:wght@100..800&family=Lexend:wght@200..900&family=Raleway:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300..900;1,300..900&family=Cardo:ital,wght@0,400;0,700;1,400&family=Italiana&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --bg: #08080b;
+  --bg-2: #0e0e12;
+  --surface: #131318;
+  --surface-2: #1a1a20;
+  --surface-3: #22222a;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --fg: #f5f0e6;
+  --fg-dim: #9a958a;
+  --muted: #5e5950;
+  --accent: #ff6b9d;
+  --accent-2: #ffb86c;
+  --accent-3: #c89cff;
+  --accent-glow: rgba(255, 107, 157, 0.3);
+  --shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.5);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --tg-color: #26A5E4;
+  --tg-glow: rgba(38, 165, 228, 0.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+::selection { background: var(--accent); color: var(--bg); }
+
+a { color: inherit; text-decoration: none; }
+button { background: none; border: none; color: inherit; font: inherit; cursor: pointer; }
+input, select { background: none; border: none; color: inherit; font: inherit; outline: none; }
+
+.container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+@media (min-width: 768px) { .container { padding: 0 48px; } }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  background: rgba(8, 8, 11, 0.75);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 16px; }
+
+/* LOGO */
+.logo {
+  display: flex; align-items: center; gap: 11px;
+  text-decoration: none; flex-shrink: 0;
+}
+.logo-mark {
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 107, 157, 0.35));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.logo:hover .logo-mark { transform: rotate(180deg); }
+.logo-text {
+  font-family: 'Fraunces', serif; font-weight: 600;
+  font-size: 19px; letter-spacing: 0.01em;
+  line-height: 1;
+}
+.logo-sub {
+  font-size: 9px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+  padding-left: 11px; margin-left: 1px;
+  border-left: 1px solid var(--border-strong);
+  line-height: 1;
+}
+
+.nav-links { display: none; gap: 28px; list-style: none; }
+@media (min-width: 768px) { .nav-links { display: flex; } }
+.nav-links a {
+  font-size: 13px; color: var(--fg-dim);
+  transition: color 0.3s; position: relative;
+}
+.nav-links a:hover { color: var(--fg); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: var(--accent);
+  transform: scaleX(0); transition: transform 0.3s;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.nav-cta {
+  font-size: 12px; letter-spacing: 0.04em;
+  padding: 9px 16px; border: 1px solid var(--border-strong);
+  border-radius: 100px; background: var(--surface);
+  transition: all 0.3s; display: flex; align-items: center; gap: 6px;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; position: relative;
+  display: flex; align-items: center;
+  padding: 120px 0 60px; overflow: hidden;
+}
+.hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.orb { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; }
+.orb-1 { width: 500px; height: 500px; background: var(--accent); top: -150px; left: -100px; opacity: 0.4; animation: float-1 25s ease-in-out infinite; }
+.orb-2 { width: 400px; height: 400px; background: var(--accent-2); bottom: -150px; right: -100px; opacity: 0.25; animation: float-2 30s ease-in-out infinite; }
+.orb-3 { width: 350px; height: 350px; background: var(--accent-3); top: 25%; left: 35%; opacity: 0.2; animation: float-3 20s ease-in-out infinite; }
+@keyframes float-1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(60px,40px)} }
+@keyframes float-2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-60px,-40px)} }
+@keyframes float-3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,60px)} }
+
+.grid-overlay {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 880px; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--fg-dim); margin-bottom: 28px;
+}
+.kicker::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
+
+.hero-title {
+  font-family: 'Fraunces', serif; font-weight: 300;
+  font-size: clamp(40px, 8vw, 128px);
+  line-height: 0.96; letter-spacing: -0.04em; margin-bottom: 28px;
+}
+.hero-title em {
+  font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-sub {
+  font-size: clamp(14px, 1.4vw, 18px); color: var(--fg-dim);
+  max-width: 540px; margin-bottom: 40px; line-height: 1.65;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 56px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 24px; border-radius: 100px;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); color: var(--fg); transform: translateY(-2px); box-shadow: 0 16px 32px -8px var(--accent-glow); }
+.btn-secondary { background: transparent; color: var(--fg); border-color: var(--border-strong); }
+.btn-secondary:hover { background: var(--surface); transform: translateY(-2px); }
+
+.hero-stats {
+  display: flex; gap: 40px; flex-wrap: wrap;
+  padding-top: 28px; border-top: 1px solid var(--border);
+}
+.hero-stat { display: flex; flex-direction: column; gap: 3px; }
+.hero-stat-num { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 400; color: var(--fg); line-height: 1; }
+.hero-stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+.scroll-hint {
+  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); z-index: 2;
+  animation: scrollHint 2s ease-in-out infinite;
+}
+.scroll-line { width: 1px; height: 24px; background: linear-gradient(180deg, var(--accent), transparent); }
+@keyframes scrollHint { 0%,100%{transform:translateX(-50%) translateY(0);opacity:0.4} 50%{transform:translateX(-50%) translateY(6px);opacity:0.8} }
+
+/* SECTIONS */
+.section { padding: 80px 0; position: relative; }
+.section-head {
+  margin-bottom: 48px; display: flex; align-items: flex-end;
+  justify-content: space-between; gap: 28px; flex-wrap: wrap;
+}
+.section-tag {
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 12px; display: block;
+}
+.section-title {
+  font-family: 'Fraunces', serif; font-weight: 300;
+  font-size: clamp(28px, 4.5vw, 56px);
+  line-height: 1.05; letter-spacing: -0.03em; max-width: 640px;
+}
+.section-title em { font-style: italic; color: var(--accent-2); }
+.section-desc { font-size: 13px; color: var(--fg-dim); max-width: 320px; line-height: 1.65; }
+
+/* PATHS */
+.paths-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 768px) { .paths-grid { grid-template-columns: 1fr 1fr; } }
+
+.path-card {
+  position: relative; padding: 36px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, var(--surface), var(--bg-2));
+  border: 1px solid var(--border); overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 320px; display: flex; flex-direction: column;
+}
+.path-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at top right, var(--accent-glow), transparent 60%);
+  opacity: 0; transition: opacity 0.4s; pointer-events: none;
+}
+.path-card:hover::before { opacity: 0.25; }
+.path-card:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+
+.path-num {
+  font-family: 'Fraunces', serif; font-size: 13px; color: var(--muted);
+  letter-spacing: 0.1em; margin-bottom: 24px;
+  display: flex; align-items: center; gap: 8px;
+}
+.path-num::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
+.path-title {
+  font-family: 'Fraunces', serif; font-weight: 400;
+  font-size: clamp(26px, 3vw, 32px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px;
+}
+.path-desc { color: var(--fg-dim); font-size: 14px; margin-bottom: 24px; flex: 1; line-height: 1.65; }
+.path-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 24px; }
+.path-tag {
+  font-size: 10px; padding: 5px 10px; border-radius: 100px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  color: var(--fg-dim); letter-spacing: 0.05em;
+}
+.path-cta {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 500; color: var(--fg);
+  transition: all 0.3s;
+}
+.path-cta i { transition: transform 0.3s; }
+.path-card:hover .path-cta { color: var(--accent); }
+.path-card:hover .path-cta i { transform: translateX(3px); }
+
+/* DESIGNER */
+.input-block { margin-bottom: 36px; }
+.input-label {
+  display: block; font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+}
+.input-wrap {
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 14px; display: flex; align-items: center; gap: 14px;
+}
+.name-input {
+  flex: 1; font-family: 'Fraunces', serif;
+  font-size: clamp(26px, 4.5vw, 48px); font-weight: 300;
+  letter-spacing: -0.02em; width: 100%; min-width: 0;
+}
+.name-input::placeholder { color: var(--muted); font-style: italic; }
+.input-deco {
+  font-family: 'Major Mono Display', monospace;
+  color: var(--accent); font-size: 12px;
+  letter-spacing: 0.1em; white-space: nowrap;
+}
+
+.filter-bar {
+  display: flex; gap: 7px; flex-wrap: wrap;
+  margin-bottom: 24px; align-items: center;
+}
+.filter-label {
+  font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); margin-right: 6px;
+}
+.filter-pill {
+  font-size: 12px; padding: 7px 14px; border-radius: 100px;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--fg-dim); transition: all 0.3s;
+}
+.filter-pill:hover { color: var(--fg); border-color: var(--border-strong); }
+.filter-pill.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+.results-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 8px;
+}
+.results-count { font-size: 12px; color: var(--fg-dim); }
+.results-count strong { color: var(--fg); font-weight: 600; }
+
+/* UNIFIED CARD GRID */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 12px;
+}
+
+.card {
+  position: relative; padding: 22px 16px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--surface) 0%, rgba(19, 19, 24, 0.5) 100%);
+  border: 1px solid var(--border);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer; overflow: hidden;
+  min-height: 130px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at center, var(--card-glow, var(--accent-glow)), transparent 65%);
+  opacity: 0; transition: opacity 0.4s; pointer-events: none;
+}
+.card:hover::before { opacity: 0.12; }
+.card:hover {
+  border-color: var(--card-accent, var(--accent));
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.4);
+}
+
+.card-preview {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 10px 0; overflow: hidden;
+  word-break: break-word; position: relative; z-index: 1; min-height: 60px;
+}
+.card-text {
+  display: inline-block; line-height: 1.25;
+  word-break: break-word; max-width: 100%;
+  color: var(--fg);
+}
+.card-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 10px; border-top: 1px solid var(--border);
+  position: relative; z-index: 1; gap: 8px;
+}
+.card-meta-label {
+  font-size: 10px; color: var(--fg-dim);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  flex: 1; text-align: left;
+}
+.card-meta-cat {
+  font-size: 9px; color: var(--muted);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  flex-shrink: 0;
+}
+.card-copy {
+  position: absolute; top: 12px; right: 12px;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 7px; background: var(--surface-2);
+  border: 1px solid var(--border); color: var(--fg-dim);
+  font-size: 11px; opacity: 0; transform: translateY(-3px);
+  transition: all 0.3s; z-index: 2;
+}
+.card:hover .card-copy { opacity: 1; transform: translateY(0); }
+.card-copy:hover { background: var(--card-accent, var(--accent)); color: var(--fg); border-color: var(--card-accent, var(--accent)); }
+
+/* PLATFORM PICKER */
+.platform-picker {
+  display: flex; gap: 8px; overflow-x: auto;
+  padding-bottom: 8px; margin-bottom: 20px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.platform-picker::-webkit-scrollbar { height: 4px; }
+.platform-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  background: var(--surface); border: 1px solid var(--border);
+  transition: all 0.3s; white-space: nowrap; flex-shrink: 0;
+}
+.platform-btn:hover { border-color: var(--border-strong); background: var(--surface-2); }
+.platform-btn.active {
+  border-color: var(--p-color, var(--accent));
+  background: linear-gradient(135deg, var(--p-bg, rgba(255,107,157,0.08)), transparent);
+  box-shadow: 0 0 20px -8px var(--p-glow, var(--accent-glow));
+}
+.platform-btn i { font-size: 16px; color: var(--p-color, var(--accent)); }
+.platform-btn span { font-size: 13px; font-weight: 500; }
+
+/* PLATFORM BANNER */
+.platform-banner {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 24px; border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--p-bg, rgba(255,107,157,0.06)), var(--surface));
+  border: 1px solid var(--p-border, var(--border));
+  margin-bottom: 24px; transition: all 0.4s;
+  position: relative; overflow: hidden;
+}
+.platform-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, var(--p-glow, transparent), transparent 50%);
+  opacity: 0.3; pointer-events: none;
+}
+.platform-banner-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--p-color, var(--accent));
+  font-size: 20px; color: #fff; flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.platform-banner-text { flex: 1; position: relative; z-index: 1; min-width: 0; }
+.platform-banner-name {
+  font-family: 'Fraunces', serif; font-size: 20px;
+  font-weight: 500; margin-bottom: 2px;
+}
+.platform-banner-desc {
+  font-size: 12px; color: var(--fg-dim);
+}
+.platform-banner-stats {
+  display: flex; gap: 20px; position: relative; z-index: 1;
+}
+.platform-banner-stat {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.platform-banner-stat-num {
+  font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500;
+  color: var(--p-color, var(--accent));
+}
+.platform-banner-stat-label {
+  font-size: 9px; color: var(--muted);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* GENERATOR CONTROLS */
+.gen-row {
+  display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;
+  align-items: flex-end;
+}
+.gen-field { display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 140px; }
+.gen-label {
+  font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted);
+}
+.gen-select-wrap { position: relative; }
+.gen-select {
+  width: 100%; padding: 12px 16px; padding-right: 40px;
+  border-radius: var(--radius-sm); background: var(--surface);
+  border: 1px solid var(--border); font-size: 14px;
+  cursor: pointer; appearance: none; -webkit-appearance: none;
+  transition: all 0.3s;
+}
+.gen-select:hover, .gen-select:focus {
+  border-color: var(--border-strong); background: var(--surface-2);
+}
+.gen-select-wrap::after {
+  content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+  position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--fg-dim); pointer-events: none; font-size: 10px;
+}
+
+.gen-btn {
+  padding: 12px 24px; border-radius: var(--radius-sm);
+  background: var(--accent); color: var(--fg);
+  font-size: 14px; font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--accent);
+  display: flex; align-items: center; gap: 8px;
+  justify-content: center; white-space: nowrap; height: 44px;
+}
+.gen-btn:hover {
+  transform: translateY(-2px); box-shadow: 0 12px 24px -8px var(--accent-glow);
+  background: var(--fg); color: var(--bg); border-color: var(--fg);
+}
+
+/* INFO BAR */
+.info-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 24px; padding: 16px 20px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); flex-wrap: wrap; gap: 14px;
+}
+.info-left { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.info-date { display: flex; flex-direction: column; gap: 2px; }
+.info-date-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.info-date-value { font-family: 'Fraunces', serif; font-size: 16px; color: var(--fg); }
+.info-status { display: flex; align-items: center; gap: 7px; font-size: 11px; color: var(--fg-dim); }
+.status-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+.info-right { display: flex; align-items: center; }
+.info-next { display: flex; flex-direction: column; gap: 2px; text-align: right; }
+.info-next-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.info-next-value { font-family: 'Fraunces', serif; font-size: 14px; color: var(--accent-2); font-variant-numeric: tabular-nums; }
+
+/* FOOTER */
+footer { padding: 60px 0 36px; border-top: 1px solid var(--border); margin-top: 60px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 28px; }
+.footer-brand { max-width: 380px; }
+.footer-tag { font-size: 13px; color: var(--fg-dim); margin-top: 10px; line-height: 1.65; }
+.footer-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; text-align: right; }
+.footer-copy { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+.footer-links { display: flex; gap: 14px; }
+.footer-links a { font-size: 11px; color: var(--fg-dim); transition: color 0.3s; }
+.footer-links a:hover { color: var(--fg); }
+
+/* TOAST */
+.toast {
+  position: fixed; bottom: 24px; left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  padding: 12px 20px; background: var(--fg); color: var(--bg);
+  border-radius: 100px; font-size: 12px; font-weight: 500;
+  box-shadow: var(--shadow); z-index: 1000;
+  display: flex; align-items: center; gap: 8px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast i { color: var(--accent); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* === TELEGRAM POPUP === */
+.popup-overlay {
+  position: fixed; inset: 0;
+  background: rgba(8, 8, 11, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.popup-overlay.show { opacity: 1; pointer-events: auto; }
+
+.popup-card {
+  background: linear-gradient(180deg, var(--surface), var(--bg-2));
+  border: 1px solid var(--border-strong);
+  border-radius: 24px;
+  padding: 40px 32px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
+}
+.popup-overlay.show .popup-card {
+  transform: translateY(0) scale(1);
+}
+
+.popup-close {
+  position: absolute; top: 14px; right: 14px;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--fg-dim); font-size: 14px;
+  transition: all 0.3s;
+}
+.popup-close:hover { background: var(--surface-3); color: var(--fg); }
+
+.popup-icon-wrap {
+  width: 68px; height: 68px;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #0088cc, #26A5E4);
+  box-shadow: 0 12px 40px -8px var(--tg-glow);
+  position: relative;
+}
+.popup-icon-wrap::after {
+  content: ''; position: absolute; inset: -4px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #0088cc, #26A5E4);
+  opacity: 0.15; filter: blur(12px); z-index: -1;
+}
+.popup-icon-wrap i { font-size: 32px; color: #fff; }
+
+.popup-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px; font-weight: 500;
+  margin-bottom: 10px; letter-spacing: -0.01em;
+}
+.popup-desc {
+  font-size: 13px; color: var(--fg-dim);
+  line-height: 1.65; margin-bottom: 28px;
+}
+
+.popup-btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 14px 28px; border-radius: 100px;
+  background: linear-gradient(135deg, #0088cc, #26A5E4);
+  color: #fff; font-size: 14px; font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(38, 165, 228, 0.3);
+  text-decoration: none;
+}
+.popup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px var(--tg-glow);
+}
+
+.popup-divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 20px 0 16px;
+}
+.popup-divider::before, .popup-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--border);
+}
+.popup-divider span {
+  font-size: 10px; color: var(--muted);
+  letter-spacing: 0.15em; text-transform: uppercase;
+}
+
+.popup-skip {
+  font-size: 12px; color: var(--muted);
+  transition: color 0.3s; text-decoration: none;
+}
+.popup-skip:hover { color: var(--fg-dim); }
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .nav-inner { padding: 12px 0; gap: 10px; }
+  .logo { gap: 9px; }
+  .logo-text { font-size: 17px; }
+  .logo-sub { display: none; }
+  .nav-cta { padding: 8px 14px; font-size: 11px; }
+  
+  .hero { padding: 100px 0 50px; min-height: auto; }
+  .hero-title { font-size: clamp(36px, 10vw, 72px); margin-bottom: 20px; }
+  .hero-sub { margin-bottom: 32px; }
+  .hero-actions { margin-bottom: 40px; }
+  .hero-actions .btn { flex: 1; justify-content: center; min-width: 0; }
+  .hero-stats { gap: 24px; }
+  .hero-stat-num { font-size: 24px; }
+  .scroll-hint { display: none; }
+  
+  .section { padding: 56px 0; }
+  .section-head { margin-bottom: 36px; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .section-desc { max-width: 100%; }
+  
+  .path-card { padding: 28px; min-height: auto; }
+  
+  .input-wrap { flex-wrap: wrap; }
+  .input-deco { display: none; }
+  
+  .platform-banner { padding: 14px 16px; flex-wrap: wrap; gap: 12px; }
+  .platform-banner-stats { display: none; }
+  .platform-banner-icon { width: 38px; height: 38px; font-size: 17px; }
+  .platform-banner-name { font-size: 17px; }
+  .platform-banner-desc { font-size: 11px; }
+  
+  .info-bar { padding: 14px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .info-right { width: 100%; justify-content: flex-end; }
+  
+  .card { padding: 18px 14px; min-height: 120px; }
+  .card-grid { gap: 10px; }
+  
+  .gen-row { flex-direction: column; gap: 12px; }
+  .gen-field { min-width: 0; width: 100%; }
+  .gen-btn { width: 100%; }
+  
+  .popup-card { padding: 32px 24px; }
+  .popup-title { font-size: 19px; }
+  .popup-desc { font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .nav-cta { padding: 8px 12px; }
+  .nav-cta span { display: none; }
+  
+  .hero-stats { gap: 16px; }
+  .hero-stat-num { font-size: 22px; }
+  .hero-stat-label { font-size: 10px; }
+  
+  .filter-bar { gap: 5px; }
+  .filter-pill { padding: 6px 11px; font-size: 11px; }
+  
+  .card-grid { grid-template-columns: 1fr; }
+  
+  .platform-btn { padding: 8px 12px; }
+  .platform-btn span { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TELEGRAM POPUP -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-card">
+    <button class="popup-close" id="popupClose" aria-label="Close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="popup-icon-wrap">
+      <i class="fa-brands fa-telegram"></i>
+    </div>
+    <h3 class="popup-title">Join Our Telegram</h3>
+    <p class="popup-desc">For more fantastic websites and content, join our Telegram channel. Stay updated with the latest creations.</p>
+    <a href="https://t.me/EliteHub2706" target="_blank" rel="noopener" class="popup-btn">
+      <i class="fa-brands fa-telegram"></i> Join Channel
+    </a>
+    <div class="popup-divider"><span>or</span></div>
+    <button class="popup-skip" id="popupSkip">Maybe later</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="nomiraGrad" x1="2" y1="2" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ff6b9d"/>
+            <stop offset="0.5" stop-color="#c89cff"/>
+            <stop offset="1" stop-color="#ffb86c"/>
+          </linearGradient>
+        </defs>
+        <path d="M15 2L28 15L15 28L2 15L15 2Z" stroke="url(#nomiraGrad)" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M15 9L21 15L15 21L9 15L15 9Z" fill="url(#nomiraGrad)"/>
+        <circle cx="15" cy="15" r="1.8" fill="#08080b"/>
+      </svg>
+      <span class="logo-text">Nomira</span>
+      <span class="logo-sub">studio</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">Studio</a></li>
+      <li><a href="#designer">Designer</a></li>
+      <li><a href="#generator">Generator</a></li>
+    </ul>
+    <a href="#designer" class="nav-cta">Begin <i class="fa-solid fa-arrow-right" style="font-size: 9px;"></i></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="container hero-content">
+    <span class="kicker">A studio for names</span>
+    <h1 class="hero-title">Names,<br><em>sculpted</em> in light.</h1>
+    <p class="hero-sub">Design your name in 260+ typographic forms across 70+ fonts and 200+ symbols. Or let us suggest 240+ curated usernames for 10 platforms — refreshed daily.</p>
+    <div class="hero-actions">
+      <a href="#designer" class="btn btn-primary">Design your name <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#generator" class="btn btn-secondary">Generate usernames</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num">260+</span><span class="hero-stat-label">Font Designs</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">240+</span><span class="hero-stat-label">Daily Names</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">70+</span><span class="hero-stat-label">Fonts</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">10</span><span class="hero-stat-label">Platforms</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- PATHS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-tag">Two paths</span>
+        <h2 class="section-title">Choose your <em>journey</em>.</h2>
+      </div>
+      <p class="section-desc">Whether you arrive with a name to refine, or empty-handed seeking inspiration — Nomira has a path crafted for you.</p>
+    </div>
+    <div class="paths-grid">
+      <div class="path-card reveal">
+        <span class="path-num">Path 01</span>
+        <h3 class="path-title">Bring your<br>own name.</h3>
+        <p class="path-desc">Type any name — yours, a brand, a character — and watch it transform into 260+ typographic forms across 8 categories, decorated with 200+ beautiful symbols.</p>
+        <div class="path-tags">
+          <span class="path-tag">260+ designs</span><span class="path-tag">70+ fonts</span>
+          <span class="path-tag">Copy-ready</span><span class="path-tag">Unicode styles</span>
+        </div>
+        <a href="#designer" class="path-cta">Open the designer <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="path-card reveal">
+        <span class="path-num">Path 02</span>
+        <h3 class="path-title">Find a new<br>name.</h3>
+        <p class="path-desc">Pick your platform and category. We'll suggest 240+ curated usernames tailored to your aesthetic, each styled in a random font. Refreshed at midnight.</p>
+        <div class="path-tags">
+          <span class="path-tag">240+ names</span><span class="path-tag">10 platforms</span>
+          <span class="path-tag">Daily refresh</span><span class="path-tag">Brand themes</span>
+        </div>
+        <a href="#generator" class="path-cta">Open the generator <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGNER -->
+<section id="designer" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-tag">Path 01 — Designer</span>
+        <h2 class="section-title">Type a name.<br>Watch it <em>bloom</em>.</h2>
+      </div>
+      <p class="section-desc">Each card is a typographic study — fonts, weights, symbols, Unicode transforms. Click any card to copy instantly.</p>
+    </div>
+    <div class="input-block reveal">
+      <label class="input-label" for="nameInput">Your name</label>
+      <div class="input-wrap">
+        <input type="text" id="nameInput" class="name-input" placeholder="aurora..." value="Aurora" maxlength="20" autocomplete="off">
+        <span class="input-deco">/ 260+ forms</span>
+      </div>
+    </div>
+    <div class="filter-bar reveal">
+      <span class="filter-label">Category</span>
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="aesthetic">Aesthetic</button>
+      <button class="filter-pill" data-filter="elegant">Elegant</button>
+      <button class="filter-pill" data-filter="bold">Bold</button>
+      <button class="filter-pill" data-filter="modern">Modern</button>
+      <button class="filter-pill" data-filter="gothic">Gothic</button>
+      <button class="filter-pill" data-filter="minimal">Minimal</button>
+      <button class="filter-pill" data-filter="fancy">Fancy</button>
+      <button class="filter-pill" data-filter="gaming">Gaming</button>
+      <button class="filter-pill" data-filter="unicode">Unicode</button>
+    </div>
+    <div class="results-meta">
+      <div class="results-count">Showing <strong id="designCount">0</strong> designs</div>
+      <div class="results-count" id="currentName">Name: <strong>Aurora</strong></div>
+    </div>
+    <div class="card-grid" id="designGrid"></div>
+  </div>
+</section>
+
+<!-- GENERATOR -->
+<section id="generator" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-tag">Path 02 — Generator</span>
+        <h2 class="section-title">Find a name<br>that <em>lingers</em>.</h2>
+      </div>
+      <p class="section-desc">Pick a platform to see themed name cards. Each name is styled in a random font with matching accent colors.</p>
+    </div>
+
+    <div class="platform-picker reveal" id="platformPicker"></div>
+
+    <div class="gen-row reveal">
+      <div class="gen-field">
+        <span class="gen-label">Category</span>
+        <div class="gen-select-wrap">
+          <select class="gen-select" id="categorySelect">
+            <option value="aesthetic">Aesthetic</option>
+            <option value="dark">Dark</option>
+            <option value="cute">Cute</option>
+            <option value="edgy">Edgy</option>
+            <option value="minimal">Minimal</option>
+            <option value="vintage">Vintage</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="nature">Nature</option>
+          </select>
+        </div>
+      </div>
+      <button class="gen-btn" id="generateBtn"><i class="fa-solid fa-arrows-rotate"></i> Regenerate</button>
+    </div>
+
+    <div class="platform-banner reveal" id="platformBanner"></div>
+
+    <div class="info-bar reveal">
+      <div class="info-left">
+        <div class="info-date">
+          <span class="info-date-label">Today's selection</span>
+          <span class="info-date-value" id="todayDate">—</span>
+        </div>
+        <div class="info-status">
+          <span class="status-dot"></span><span>Refreshed daily at 00:00</span>
+        </div>
+      </div>
+      <div class="info-right">
+        <div class="info-next">
+          <span class="info-next-label">Next refresh in</span>
+          <span class="info-next-value" id="nextRefresh">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-meta reveal">
+      <div class="results-count"><strong id="nameCount">0</strong> names available</div>
+      <div class="results-count">Click any card to copy</div>
+    </div>
+    <div class="card-grid" id="namesGrid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <svg class="logo-mark" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="nomiraGradF" x1="2" y1="2" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#ff6b9d"/>
+                <stop offset="0.5" stop-color="#c89cff"/>
+                <stop offset="1" stop-color="#ffb86c"/>
+              </linearGradient>
+            </defs>
+            <path d="M15 2L28 15L15 28L2 15L15 2Z" stroke="url(#nomiraGradF)" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M15 9L21 15L15 21L9 15L15 9Z" fill="url(#nomiraGradF)"/>
+            <circle cx="15" cy="15" r="1.8" fill="#08080b"/>
+          </svg>
+          <span class="logo-text">Nomira</span>
+          <span class="logo-sub">studio</span>
+        </a>
+        <p class="footer-tag">A studio for names. Crafted for writers, founders, dreamers, and anyone in between. Where typography meets identity.</p>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a href="#designer">Designer</a><a href="#generator">Generator</a><a href="https://t.me/EliteHub2706" target="_blank" rel="noopener">Telegram</a>
+        </div>
+        <span class="footer-copy">© 2024 Nomira Studio. Made with care.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"><i class="fa-solid fa-check"></i> <span id="toastMsg">Copied</span></div>
+
+<script>
+// === TELEGRAM POPUP ===
+function showPopup() {
+  document.getElementById('popupOverlay').classList.add('show');
+}
+function hidePopup() {
+  document.getElementById('popupOverlay').classList.remove('show');
+}
+
+// Show popup after slight delay on page load
+window.addEventListener('load', () => {
+  setTimeout(showPopup, 600);
+});
+
+document.getElementById('popupClose').addEventListener('click', hidePopup);
+document.getElementById('popupSkip').addEventListener('click', hidePopup);
+document.getElementById('popupOverlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) hidePopup();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') hidePopup();
+});
+
+// === PLATFORM THEMES ===
+const platformThemes = {
+  instagram: { label: 'Instagram', icon: 'fa-brands fa-instagram', color: '#E1306C', glow: 'rgba(225,48,108,0.25)', bg: 'rgba(225,48,108,0.06)', border: 'rgba(225,48,108,0.2)', desc: 'Aesthetic names with dots, underscores, and script fonts', maxLen: 30 },
+  tiktok: { label: 'TikTok', icon: 'fa-brands fa-tiktok', color: '#FE2C55', glow: 'rgba(254,44,85,0.25)', bg: 'rgba(254,44,85,0.06)', border: 'rgba(254,44,85,0.2)', desc: 'Trendy names with x, ie, y suffixes and bold fonts', maxLen: 24 },
+  twitter: { label: 'Twitter / X', icon: 'fa-brands fa-x-twitter', color: '#1D9BF0', glow: 'rgba(29,155,240,0.25)', bg: 'rgba(29,155,240,0.06)', border: 'rgba(29,155,240,0.2)', desc: 'Short, clean, punchy names for the timeline', maxLen: 15 },
+  youtube: { label: 'YouTube', icon: 'fa-brands fa-youtube', color: '#FF0000', glow: 'rgba(255,0,0,0.2)', bg: 'rgba(255,0,0,0.05)', border: 'rgba(255,0,0,0.18)', desc: 'Channel-ready names with bold display fonts', maxLen: 40 },
+  discord: { label: 'Discord', icon: 'fa-brands fa-discord', color: '#5865F2', glow: 'rgba(88,101,242,0.25)', bg: 'rgba(88,101,242,0.06)', border: 'rgba(88,101,242,0.2)', desc: 'Gamer tags with numbers, .exe, and gaming symbols', maxLen: 32 },
+  telegram: { label: 'Telegram', icon: 'fa-brands fa-telegram', color: '#26A5E4', glow: 'rgba(38,165,228,0.25)', bg: 'rgba(38,165,228,0.06)', border: 'rgba(38,165,228,0.2)', desc: 'Clean, modern names with underscores and minimal styles', maxLen: 32 },
+  snapchat: { label: 'Snapchat', icon: 'fa-brands fa-snapchat', color: '#FFFC00', glow: 'rgba(255,252,0,0.15)', bg: 'rgba(255,252,0,0.04)', border: 'rgba(255,252,0,0.15)', desc: 'Playful, cute names with sparkles and sweet suffixes', maxLen: 15 },
+  tumblr: { label: 'Tumblr', icon: 'fa-brands fa-tumblr', color: '#7A8B99', glow: 'rgba(122,139,153,0.2)', bg: 'rgba(122,139,153,0.06)', border: 'rgba(122,139,153,0.18)', desc: 'Dark, aesthetic names with dashes, dots, and noir vibes', maxLen: 32 },
+  pinterest: { label: 'Pinterest', icon: 'fa-brands fa-pinterest', color: '#E60023', glow: 'rgba(230,0,35,0.2)', bg: 'rgba(230,0,35,0.05)', border: 'rgba(230,0,35,0.18)', desc: 'Elegant, studio-style names with refined serif fonts', maxLen: 15 },
+  twitch: { label: 'Twitch', icon: 'fa-brands fa-twitch', color: '#9146FF', glow: 'rgba(145,70,255,0.25)', bg: 'rgba(145,70,255,0.06)', border: 'rgba(145,70,255,0.2)', desc: 'Streamer names with tv, live, playz, and gaming symbols', maxLen: 25 },
+};
+
+// === SYMBOLS ===
+function decorateText(text, deco) {
+  switch(deco) {
+    case 'plain': return text;
+    case 'stars': return `✦ ${text} ✦`;
+    case 'stars2': return `✧ ${text} ✧`;
+    case 'stars3': return `✪ ${text} ✪`;
+    case 'stars4': return `⋆ ${text} ⋆`;
+    case 'gaming1': return `꧁༒${text}༒꧂`;
+    case 'gaming2': return `亗${text}亗`;
+    case 'gaming3': return `乂${text}乂`;
+    case 'gaming4': return `メ${text}メ`;
+    case 'gaming5': return `彡${text}彡`;
+    case 'gaming6': return `ツ${text}ツ`;
+    case 'gaming7': return `『${text}』`;
+    case 'gaming8': return `【${text}】`;
+    case 'gaming9': return `༺${text}༻`;
+    case 'gaming10': return `★彡${text}彡★`;
+    case 'gaming11': return `꧁${text}꧂`;
+    case 'gaming12': return `☠ ${text} ☠`;
+    case 'gaming13': return `⚡ ${text} ⚡`;
+    case 'gaming14': return `♛ ${text} ♛`;
+    case 'moon': return `☾ ${text} ☾`;
+    case 'sparkleEnd': return `${text} ✧`;
+    case 'sparkleBoth': return `✧ ${text} ✧`;
+    case 'heart': return `♡ ${text} ♡`;
+    case 'leaves': return `❧ ${text} ❦`;
+    case 'leaves2': return `❀ ${text} ❀`;
+    case 'leaves3': return `✿ ${text} ✿`;
+    case 'dots': return text.split('').join('⋅');
+    case 'dots2': return text.split('').join('·');
+    case 'dots3': return text.split('').join('•');
+    case 'music': return `♪ ${text} ♫`;
+    case 'shape': return `◆ ${text} ◆`;
+    case 'shape5': return `❖ ${text} ❖`;
+    case 'shape6': return `⟡ ${text} ⟡`;
+    case 'comb1': return `✧ ∘ ${text} ∘ ✧`;
+    case 'comb2': return `❀ ${text} ✿`;
+    case 'comb3': return `☾ ${text} ✦`;
+    case 'comb4': return `✪ ${text} ♡`;
+    case 'comb5': return `⟡ ${text} ✦`;
+    case 'dark1': return `⛧ ${text} ⛧`;
+    case 'dark2': return `✠ ${text} ✠`;
+    case 'dark3': return `† ${text} †`;
+    case 'royal1': return `♔ ${text} ♔`;
+    case 'royal2': return `⚜ ${text} ⚜`;
+    default: return text;
+  }
+}
+
+function applyTransform(text, transform) {
+  if (transform === 'lowercase') return text.toLowerCase();
+  if (transform === 'uppercase') return text.toUpperCase();
+  return text;
+}
+
+// === UNICODE ===
+const unicodeRanges = {
+  boldSerif: { upper: 0x1D400, lower: 0x1D41A },
+  italicSerif: { upper: 0x1D434, lower: 0x1D44E },
+  boldItalicSerif: { upper: 0x1D468, lower: 0x1D482 },
+  boldScript: { upper: 0x1D4D0, lower: 0x1D4EA },
+  boldFraktur: { upper: 0x1D56C, lower: 0x1D586 },
+  sansSerifBold: { upper: 0x1D5D4, lower: 0x1D5EE },
+  sansSerifItalic: { upper: 0x1D608, lower: 0x1D622 },
+  sansSerifBoldItalic: { upper: 0x1D63C, lower: 0x1D656 },
+  monospace: { upper: 0x1D670, lower: 0x1D68A },
+  circled: { upper: 0x24B6, lower: 0x24D0 },
+  fullwidth: { upper: 0xFF21, lower: 0xFF41 },
+};
+
+function transformUnicode(text, style) {
+  const range = unicodeRanges[style];
+  if (!range) return text;
+  let result = '';
+  for (const char of text) {
+    const code = char.charCodeAt(0);
+    if (code >= 65 && code <= 90) result += String.fromCodePoint(range.upper + (code - 65));
+    else if (code >= 97 && code <= 122) result += String.fromCodePoint(range.lower + (code - 97));
+    else result += char;
+  }
+  return result;
+}
+
+// === FONTS BY CATEGORY ===
+const fontsByCategory = {
+  aesthetic: {
+    fonts: ['Dancing Script','Sacramento','Great Vibes','Parisienne','Tangerine','Satisfy','Allura','Pinyon Script','Norican','Petit Formal Script','Caveat','Yellowtail','Pacifico','Lobster','Kaushan Script','Permanent Marker','Indie Flower','Patrick Hand','Kalam','Homemade Apple','Shadows Into Light'],
+    sizes: [40, 44, 48, 52],
+    weights: [400, 700],
+    decos: ['plain','plain','stars','sparkleEnd','sparkleBoth','moon','leaves','leaves3','dots','comb1','comb2','comb3','heart','comb4','comb5','leaves2','music'],
+    transform: ['lowercase','none','none','lowercase']
+  },
+  elegant: {
+    fonts: ['Cormorant Garamond','Playfair Display','DM Serif Display','Bodoni Moda','Cinzel','Marcellus','EB Garamond','Forum','Young Serif','Prata','Libre Caslon Display','Almendra','Spectral','Yeseva One','Cormorant','Trirong','Lora','Merriweather','Cardo','Italiana','Libre Baskerville','Fraunces'],
+    sizes: [30, 34, 38, 42, 46],
+    weights: [400, 700, 900],
+    decos: ['plain','plain','stars','sparkleEnd','sparkleBoth','moon','leaves','comb3','shape6','comb4','royal2','royal1'],
+    transform: ['none','uppercase','none']
+  },
+  bold: {
+    fonts: ['Abril Fatface','Bebas Neue','Unbounded','Syne','Yeseva One','Anton','Oswald','Teko','Bungee','Russo One','Alfa Slab One','Passion One','Lilita One','Paytone One','Archivo Black','Chango','Bowlby One','Fascinate','Righteous'],
+    sizes: [34, 38, 42, 46, 50],
+    weights: [400, 700, 900],
+    decos: ['plain','plain','stars','sparkleEnd','moon','shape','shape5','stars3','comb4','gaming13'],
+    transform: ['none','uppercase','uppercase','none']
+  },
+  modern: {
+    fonts: ['Major Mono Display','Cutive Mono','Unbounded','Syne','Space Grotesk','Orbitron','Rajdhani','Chakra Petch','Oxanium','Michroma','Share Tech','Electrolize','Syncopate','JetBrains Mono','Roboto Mono','Inter','Poppins','Montserrat','Manrope','Outfit','Sora','Lexend','Raleway','Work Sans'],
+    sizes: [24, 28, 32, 36],
+    weights: [400, 700],
+    decos: ['plain','plain','stars2','sparkleEnd','dots','dots2','dots3','shape5','comb6'],
+    transform: ['lowercase','uppercase','none','lowercase']
+  },
+  gothic: {
+    fonts: ['UnifrakturMaguntia','MedievalSharp','Pirata One','Cinzel Decorative','UnifrakturCook','Germania One','New Rocker','Ewert','Rye'],
+    sizes: [34, 38, 42, 46],
+    weights: [400, 700, 900],
+    decos: ['plain','plain','stars','moon','leaves','sparkleBoth','comb3','dark1','dark2','dark3'],
+    transform: ['none','uppercase','none']
+  },
+  minimal: {
+    fonts: ['Forum','Marcellus','Spectral','Cormorant','Cormorant Garamond','Trirong','Raleway','Inter','Poppins','Work Sans','Outfit','Sora','Lexend','Manrope','Nunito','Urbanist','Quicksand'],
+    sizes: [26, 30, 34, 38, 42],
+    weights: [200, 300, 400],
+    decos: ['plain','plain','plain','sparkleEnd','dots','comb6'],
+    transform: ['lowercase','uppercase','none','lowercase']
+  },
+  fancy: {
+    fonts: ['Monoton','Silkscreen','Press Start 2P','Special Elite','Playfair Display','DM Serif Display','Cinzel','Cormorant','Marcellus','Yeseva One','Bodoni Moda','Italiana','Libre Baskerville','Tomorrow'],
+    sizes: [26, 30, 34, 38, 42, 46],
+    weights: [400, 700, 900],
+    decos: ['moon','leaves','sparkleBoth','stars','comb1','comb2','comb3','comb4','comb5','shape6','heart','leaves3','royal1','royal2'],
+    transform: ['none','uppercase','lowercase','none']
+  },
+  gaming: {
+    fonts: ['Bungee','Russo One','Audiowide','Rajdhani','Chakra Petch','Orbitron','Teko','Anton','Oswald','Righteous','Press Start 2P','Monoton','Silkscreen','Black Ops One','Fascinate','Rye','Chango','Bowlby One','Passion One','Paytone One'],
+    sizes: [26, 30, 34, 38, 42],
+    weights: [400, 700, 900],
+    decos: ['gaming1','gaming2','gaming3','gaming4','gaming5','gaming6','gaming7','gaming8','gaming9','gaming10','gaming11','gaming12','gaming13','gaming14','plain','stars','stars3'],
+    transform: ['none','uppercase','none','uppercase']
+  }
+};
+
+// === BUILD DESIGN CATALOG ===
+const fontDesigns = [];
+Object.keys(fontsByCategory).forEach(cat => {
+  const { fonts, sizes, weights, decos, transform } = fontsByCategory[cat];
+  fonts.forEach((font, i) => {
+    for (let j = 0; j < 3; j++) {
+      const seed = (i * 7 + j * 3 + cat.length);
+      fontDesigns.push({
+        font, category: cat,
+        deco: decos[seed % decos.length],
+        size: sizes[seed % sizes.length],
+        weight: weights[seed % weights.length],
+        transform: transform[seed % transform.length],
+        italic: (seed % 4 === 0) && (cat === 'elegant' || cat === 'fancy' || cat === 'minimal')
+      });
+    }
+  });
+});
+
+const unicodeStyles = ['boldSerif','italicSerif','boldItalicSerif','boldScript','boldFraktur','sansSerifBold','sansSerifItalic','sansSerifBoldItalic','monospace','circled','fullwidth'];
+const unicodeDecos = ['plain','stars','stars2','sparkleEnd','sparkleBoth','moon','dots','leaves','comb1','comb3','gaming7','gaming8'];
+unicodeStyles.forEach((style, i) => {
+  for (let j = 0; j < 3; j++) {
+    fontDesigns.push({
+      unicode: style, category: 'unicode',
+      deco: unicodeDecos[(i * 3 + j) % unicodeDecos.length],
+      size: 22 + (j * 2), weight: 400,
+      transform: j === 1 ? 'uppercase' : 'none'
+    });
+  }
+});
+
+// === WORD BANKS ===
+const wordBanks = {
+  aesthetic: { adj: ['velvet','lunar','celestial','midnight','ethereal','twilight','moonlit','starlit','dreamy','ivory','pearl','satin','silken','rosy','dewy','hazy','milky','opal','lilac','peachy','misty','plush','honeyed'], noun: ['whisper','aura','soul','spirit','echo','reverie','muse','dreamscape','lullaby','serenade','melody','sonata','rhapsody','encore','lyric','verse','stanza','nocturne','prelude','aria','ballad','hymn','psalm','glow','tide'] },
+  dark: { adj: ['raven','obsidian','shadowy','phantom','ghostly','noir','eclipsed','ashen','smoky','misty','gloomy','hollow','cryptic','midnight','velvet'], noun: ['raven','obsidian','void','shadow','phantom','ghost','noir','eclipse','ash','smoke','mist','gloom','hollow','abyss','nightfall','crypt','shroud','wraith','specter','venom','thorn','scar','blade'] },
+  cute: { adj: ['fluffy','sparkly','twinkly','peachy','sweet','sugary','honeyed','berry','cherry','sunny','lovely','daisy','lily','honey'], noun: ['bunny','kitten','peach','honey','sugar','cookie','muffin','cupcake','sparkle','twinkle','daisy','lily','sweetie','candy','sprinkle','berry','cherry','macaron','sundae','cocoa','toffee','caramel','marshmallow'] },
+  edgy: { adj: ['jagged','rogue','rebel','glitchy','neon','cyber','acidic','toxic','electric','static','radioactive'], noun: ['venom','blade','thorn','scar','rage','havoc','riot','vortex','chaos','rogue','rebel','outcast','glitch','neon','cyber','acid','pulse','fusion'] },
+  minimal: { adj: ['plain','basic','simple','clean','pure','raw','real','true','solo','single','blank','calm','still','soft','clear','bare'], noun: ['mono','plain','basic','simple','clean','pure','raw','real','true','one','solo','single','only','just','blank','calm','still','soft','clear','bare'] },
+  vintage: { adj: ['retro','classic','antique','nostalgic','bygone','gilded','ornate','brassy','sepia','crimson','velvet','parchment'], noun: ['retro','classic','epoch','era','antique','nostalgia','bygone','heirloom','manor','parlour','sepia','crimson','velvet','parchment','scroll','manuscript'] },
+  fantasy: { adj: ['fae','elven','dragon','phoenix','siren','mystic','arcane','elysian','celestial','ethereal','aether','mythic'], noun: ['fae','elf','dragon','phoenix','siren','nymph','pixie','sprite','fairy','griffin','merlin','morgana','avalon','elysian','aether','rune','spell','myth','oracle','mystic','arcane'] },
+  nature: { adj: ['wild','fern','mossy','misty','sunny','stormy','breezy','petal','lavender','jasmine','piney','cedar','birch','maple'], noun: ['willow','sage','ivy','hazel','river','meadow','forest','fern','moss','ocean','sky','cloud','storm','breeze','petal','blossom','marigold','lavender','jasmine','pine','cedar','birch','maple','grove','glade','brook','stream','lake','valley','ridge'] },
+};
+
+const platformPatterns = {
+  instagram: ['{adj}.{noun}','{adj}_{noun}','{adj}.{noun}.{x}','{adj}_{noun}_{x}','{noun}.{adj}','the.{adj}.{noun}','{adj}.{noun}s','its.{adj}.{noun}','{adj}{noun}{x}','{adj}.{noun}.official'],
+  tiktok: ['{adj}{noun}{x}','{adj}.{noun}','the{adj}{noun}','{adj}_{noun}','{adj}{noun}ie','{adj}x{x}','{noun}.{adj}','{adj}.{noun}.official','its{adj}{noun}','{adj}{noun}y'],
+  twitter: ['{adj}{noun}','the{adj}{noun}','{adj}_{noun}','{adj}{noun}{x}','not{adj}{noun}','{adj}{noun}ed','its{adj}{noun}','{adj}{noun}rr'],
+  youtube: ['the{adj}{noun}','{adj}{noun}official','{adj}.{noun}.channel','{adj}{noun}creates','its{adj}{noun}','{adj}{noun}studio','{adj}{noun}world','the{adj}{noun}life'],
+  discord: ['{adj}{noun}{num}','{adj}_{noun}_{num}','{adj}.{noun}.exe','xX_{adj}{noun}_Xx','{adj}{noun}#{num}','{noun}_{adj}_{num}','{adj}.{noun}.ogg','{adj}{noun}_tk'],
+  telegram: ['{adj}_{noun}','{adj}.{noun}','the_{adj}_{noun}','{adj}{noun}','{noun}_{adj}','its_{adj}_{noun}','{adj}.{noun}.bot','{adj}_{noun}_official'],
+  snapchat: ['{adj}{noun}snap','{adj}snap','{adj}{noun}✨','{adj}berry','{adj}bun','{adj}{noun}ie','{adj}sweet','{adj}spark'],
+  tumblr: ['{adj}-{noun}','{adj}.{noun}','{adj}{noun}','the-{adj}-{noun}','{adj}_{noun}_','·{adj}{noun}·','{adj}noir','{noun}{adj}'],
+  pinterest: ['{adj}.{noun}','the{adj}{noun}','{adj}{noun}co','{adj}_{noun}_','{adj}{noun}studio','{adj}.{noun}.designs','by{adj}{noun}','{adj}{noun}blog'],
+  twitch: ['{adj}{noun}tv','{adj}_{noun}_','xX{adj}{noun}Xx','{adj}{noun}live','{adj}{noun}playz','{adj}{noun}gg','its{adj}{noun}','{adj}{noun}stream'],
+};
+
+// === UTILS ===
+function getDailySeed() {
+  const today = new Date();
+  const dateStr = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
+  let hash = 0;
+  for (let i = 0; i < dateStr.length; i++) { hash = ((hash<<5)-hash)+dateStr.charCodeAt(i); hash|=0; }
+  return Math.abs(hash);
+}
+function mulberry32(seed) {
+  return function() {
+    let t = seed += 0x6D2B79F5;
+    t = Math.imul(t ^ t>>>15, t|1);
+    t ^= t + Math.imul(t ^ t>>>7, t|61);
+    return ((t ^ t>>>14) >>> 0) / 4294967296;
+  };
+}
+function escapeHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+}
+
+// === RENDER DESIGNS ===
+function renderDesigns(name, filter = 'all') {
+  const grid = document.getElementById('designGrid');
+  const safeName = name || 'Aurora';
+  const filtered = filter === 'all' ? fontDesigns : fontDesigns.filter(d => d.category === filter);
+  
+  if (!filtered.length) {
+    grid.innerHTML = '<div style="padding:48px;text-align:center;color:var(--muted);grid-column:1/-1;">No designs in this category.</div>';
+    document.getElementById('designCount').textContent = '0';
+    return;
+  }
+  
+  grid.innerHTML = filtered.map(d => {
+    let displayText = safeName, copyText = safeName;
+    if (d.unicode) {
+      copyText = transformUnicode(safeName, d.unicode);
+      if (d.transform) copyText = applyTransform(copyText, d.transform);
+      copyText = decorateText(copyText, d.deco);
+      displayText = copyText;
+    } else {
+      let t = safeName;
+      if (d.transform) t = applyTransform(t, d.transform);
+      t = decorateText(t, d.deco);
+      copyText = t; displayText = t;
+    }
+    const fontFamily = d.unicode ? "'Space Grotesk',sans-serif" : `'${d.font}',serif`;
+    const fontStyle = d.italic ? 'italic' : 'normal';
+    const label = d.unicode ? `Unicode · ${d.unicode}` : d.font;
+    return `<div class="card" data-copy="${escapeHtml(copyText)}">
+      <div class="card-preview"><span class="card-text" style="font-family:${fontFamily};font-weight:${d.weight};font-style:${fontStyle};font-size:${d.size}px;">${escapeHtml(displayText)}</span></div>
+      <div class="card-meta"><span class="card-meta-label">${escapeHtml(label)}</span><span class="card-meta-cat">${d.category}</span></div>
+      <button class="card-copy" aria-label="Copy"><i class="fa-regular fa-copy"></i></button>
+    </div>`;
+  }).join('');
+  
+  document.getElementById('designCount').textContent = filtered.length;
+  document.getElementById('currentName').innerHTML = `Name: <strong>${escapeHtml(safeName)}</strong>`;
+}
+
+// === GENERATE NAMES ===
+function generateNames(platform, category) {
+  const bank = wordBanks[category] || wordBanks.aesthetic;
+  const patterns = platformPatterns[platform] || platformPatterns.instagram;
+  const maxLen = platformThemes[platform].maxLen;
+  const seed = getDailySeed() + platform.charCodeAt(0) * 31 + category.charCodeAt(0) * 17;
+  const rand = mulberry32(seed);
+  const names = new Set();
+  let attempts = 0;
+  while (names.size < 240 && attempts < 8000) {
+    attempts++;
+    const pattern = patterns[Math.floor(rand() * patterns.length)];
+    const adj = bank.adj[Math.floor(rand() * bank.adj.length)];
+    const noun = bank.noun[Math.floor(rand() * bank.noun.length)];
+    const num = String(Math.floor(rand() * 99)).padStart(2, '0');
+    const x = ['x','xx','ie','y','s','ed','ing'][Math.floor(rand() * 7)];
+    let name = pattern.replace('{adj}',adj).replace('{noun}',noun).replace('{num}',num).replace('{x}',x);
+    if (platform === 'youtube' || platform === 'pinterest') name = name.charAt(0).toUpperCase() + name.slice(1);
+    if (name.length <= maxLen && name.length >= 3) names.add(name);
+  }
+  return Array.from(names);
+}
+
+// === RENDER NAMES (text stays white) ===
+function renderNames(names, platform) {
+  const grid = document.getElementById('namesGrid');
+  const theme = platformThemes[platform];
+  
+  if (!names.length) {
+    grid.innerHTML = '<div style="padding:48px;text-align:center;color:var(--muted);grid-column:1/-1;">No names available.</div>';
+    document.getElementById('nameCount').textContent = '0';
+    return;
+  }
+  
+  const fontPools = {
+    instagram: ['Dancing Script','Sacramento','Great Vibes','Parisienne','Tangerine','Satisfy','Allura','Pinyon Script','Caveat','Yellowtail','Pacifico','Lobster','Cormorant Garamond','Playfair Display','DM Serif Display','Prata','Marcellus'],
+    tiktok: ['Bungee','Russo One','Anton','Oswald','Teko','Passion One','Lilita One','Paytone One','Chango','Bowlby One','Righteous','Unbounded','Syne','Space Grotesk'],
+    twitter: ['Inter','Poppins','Montserrat','Manrope','Outfit','Sora','Lexend','Raleway','Space Grotesk','Work Sans','DM Sans'],
+    youtube: ['Bebas Neue','Anton','Oswald','Archivo Black','Teko','Russo One','Alfa Slab One','Abril Fatface','Playfair Display','Unbounded'],
+    discord: ['Bungee','Russo One','Audiowide','Rajdhani','Chakra Petch','Orbitron','Teko','Major Mono Display','JetBrains Mono','Roboto Mono','Share Tech','Michroma'],
+    telegram: ['Inter','Poppins','Manrope','Outfit','Sora','Lexend','Raleway','Work Sans','DM Sans','Space Grotesk','Nunito','Urbanist'],
+    snapchat: ['Pacifico','Caveat','Dancing Script','Yellowtail','Lobster','Permanent Marker','Indie Flower','Patrick Hand','Kalam','Satisfy','Shadows Into Light'],
+    tumblr: ['Cormorant Garamond','Playfair Display','EB Garamond','Lora','Spectral','Cardo','Crimson Text','Italiana','Prata','Marcellus','Forum'],
+    pinterest: ['Playfair Display','Cormorant Garamond','DM Serif Display','Prata','Italiana','Bodoni Moda','Libre Baskerville','Marcellus','EB Garamond','Cardo','Fraunces'],
+    twitch: ['Bungee','Russo One','Audiowide','Orbitron','Rajdhani','Chakra Petch','Oxanium','Michroma','Electrolize','Syncopate','Teko','Anton'],
+  };
+  
+  const decoPools = {
+    instagram: ['plain','dots','dots2','stars','sparkleEnd','sparkleBoth','moon','leaves2','heart','comb1'],
+    tiktok: ['plain','stars3','sparkleEnd','gaming2','gaming5','gaming11','stars'],
+    twitter: ['plain','plain','plain','stars4'],
+    youtube: ['plain','stars','stars3','gaming13','shape','shape5'],
+    discord: ['plain','gaming1','gaming2','gaming3','gaming4','gaming5','gaming7','gaming8','gaming9','gaming10','gaming11','gaming12','gaming13','gaming14'],
+    telegram: ['plain','plain','dots2','stars4','sparkleEnd'],
+    snapchat: ['plain','heart','sparkleEnd','sparkleBoth','stars','stars2'],
+    tumblr: ['plain','dark1','dark2','dark3','moon','comb3','leaves2','stars4'],
+    pinterest: ['plain','leaves','leaves2','leaves3','royal1','royal2','stars','sparkleBoth','comb2'],
+    twitch: ['plain','gaming2','gaming3','gaming5','gaming7','gaming10','gaming11','gaming13','gaming14','stars3'],
+  };
+  
+  const fonts = fontPools[platform] || fontPools.instagram;
+  const decos = decoPools[platform] || decoPools.instagram;
+  const sizes = [14, 15, 16, 17];
+  
+  grid.innerHTML = names.map(name => {
+    const font = fonts[Math.floor(Math.random() * fonts.length)];
+    const deco = decos[Math.floor(Math.random() * decos.length)];
+    const size = sizes[Math.floor(Math.random() * sizes.length)];
+    
+    let displayText = name, copyText = name;
+    if (Math.random() < 0.25) {
+      const styles = ['boldSerif','italicSerif','boldItalicSerif','boldScript','sansSerifBold','sansSerifItalic','monospace','circled','fullwidth'];
+      const style = styles[Math.floor(Math.random() * styles.length)];
+      copyText = transformUnicode(name, style);
+      displayText = copyText;
+    }
+    copyText = decorateText(copyText, deco);
+    displayText = copyText;
+    
+    return `<div class="card" data-copy="${escapeHtml(copyText)}" style="--card-accent:${theme.color};--card-glow:${theme.glow};">
+      <div class="card-preview"><span class="card-text" style="font-family:'${font}',serif;font-size:${size}px;">${escapeHtml(displayText)}</span></div>
+      <div class="card-meta"><span class="card-meta-label">${theme.label}</span><span class="card-meta-cat">${font.split(' ')[0]}</span></div>
+      <button class="card-copy" aria-label="Copy"><i class="fa-regular fa-copy"></i></button>
+    </div>`;
+  }).join('');
+  
+  document.getElementById('nameCount').textContent = names.length;
+}
+
+// === PLATFORM PICKER ===
+function renderPlatformPicker() {
+  const picker = document.getElementById('platformPicker');
+  picker.innerHTML = Object.keys(platformThemes).map(key => {
+    const t = platformThemes[key];
+    return `<button class="platform-btn ${key === currentPlatform ? 'active' : ''}" data-platform="${key}" style="--p-color:${t.color};--p-glow:${t.glow};--p-bg:${t.bg};">
+      <i class="${t.icon}"></i><span>${t.label}</span>
+    </button>`;
+  }).join('');
+}
+
+// === PLATFORM BANNER ===
+function renderPlatformBanner(platform) {
+  const banner = document.getElementById('platformBanner');
+  const t = platformThemes[platform];
+  banner.style.setProperty('--p-color', t.color);
+  banner.style.setProperty('--p-glow', t.glow);
+  banner.style.setProperty('--p-bg', t.bg);
+  banner.style.setProperty('--p-border', t.border);
+  banner.innerHTML = `
+    <div class="platform-banner-icon"><i class="${t.icon}"></i></div>
+    <div class="platform-banner-text">
+      <div class="platform-banner-name">${t.label}</div>
+      <div class="platform-banner-desc">${t.desc}</div>
+    </div>
+    <div class="platform-banner-stats">
+      <div class="platform-banner-stat"><span class="platform-banner-stat-num">${t.maxLen}</span><span class="platform-banner-stat-label">Max chars</span></div>
+      <div class="platform-banner-stat"><span class="platform-banner-stat-num">240+</span><span class="platform-banner-stat-label">Names</span></div>
+    </div>
+  `;
+}
+
+// === DATE & COUNTDOWN ===
+function updateDateDisplay() {
+  document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+}
+function updateCountdown() {
+  const now = new Date();
+  const tomorrow = new Date(now); tomorrow.setDate(tomorrow.getDate()+1); tomorrow.setHours(0,0,0,0);
+  const diff = tomorrow - now;
+  const h = Math.floor(diff/3600000), m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
+  document.getElementById('nextRefresh').textContent = `${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
+}
+
+// === TOAST ===
+let toastTimeout;
+function showToast(msg, icon = 'check') {
+  const toast = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  toast.querySelector('i').className = `fa-solid fa-${icon}`;
+  toast.classList.add('show');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+function copyToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard')).catch(() => fallbackCopy(text));
+  } else { fallbackCopy(text); }
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea'); ta.value = text;
+  ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); showToast('Copied to clipboard'); } catch(e) { showToast('Copy failed','xmark'); }
+  document.body.removeChild(ta);
+}
+
+// === SCROLL REVEAL ===
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// === STATE & EVENTS ===
+let currentPlatform = 'instagram';
+let currentFilter = 'all';
+let debounceTimer;
+
+const nameInput = document.getElementById('nameInput');
+nameInput.addEventListener('input', () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    renderDesigns(nameInput.value.trim() || 'Aurora', currentFilter);
+  }, 200);
+});
+
+document.querySelectorAll('.filter-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    currentFilter = pill.dataset.filter;
+    renderDesigns(nameInput.value.trim() || 'Aurora', currentFilter);
+  });
+});
+
+document.getElementById('designGrid').addEventListener('click', (e) => {
+  const card = e.target.closest('.card');
+  if (card && card.dataset.copy) copyToClipboard(card.dataset.copy);
+});
+
+document.getElementById('platformPicker').addEventListener('click', (e) => {
+  const btn = e.target.closest('.platform-btn');
+  if (!btn) return;
+  currentPlatform = btn.dataset.platform;
+  document.querySelectorAll('.platform-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPlatformBanner(currentPlatform);
+  refreshNames();
+});
+
+document.getElementById('categorySelect').addEventListener('change', refreshNames);
+document.getElementById('generateBtn').addEventListener('click', refreshNames);
+
+document.getElementById('namesGrid').addEventListener('click', (e) => {
+  const card = e.target.closest('.card');
+  if (card && card.dataset.copy) copyToClipboard(card.dataset.copy);
+});
+
+function refreshNames() {
+  const category = document.getElementById('categorySelect').value;
+  const names = generateNames(currentPlatform, category);
+  renderNames(names, currentPlatform);
+}
+
+// === INIT ===
+renderDesigns('Aurora');
+renderPlatformPicker();
+renderPlatformBanner(currentPlatform);
+refreshNames();
+updateDateDisplay();
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
